@@ -4,5 +4,6 @@
 [문제코드 링크](https://leetcode.com/problems/valid-parentheses)
 
 풀이일자 : 2020.07.13   
-사용 언어 : javascript   
-결과 : 성공 (시간 : 92 ms , 메모리 : 33.3 MB)
+사용 언어 : 
+ - javascript (시간 : 92 ms , 메모리 : 33.3 MB 소요)
+ - java (시간 : 5 ms, 메모리 : 39.4MB 소요)
