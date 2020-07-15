@@ -4,4 +4,5 @@
 
 풀이일자 : 2020.07.15   
 사용 언어 : 
+ - java 성공 (시간 : 2 ms, 메모리 : 40.5 MB 소요)
  - C++ 실패 (사유 : alloc-dealloc-mismatch)
