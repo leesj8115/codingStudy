@@ -5,3 +5,4 @@
  - Valid Parentheses = '20.07.13
  - Merge Two Sorted Lists = '20.07.15
  - Remove Duplicates from Sorted Array = '20.07.20
+ - Remove Element = `20.07.21
