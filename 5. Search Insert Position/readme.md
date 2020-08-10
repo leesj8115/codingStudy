@@ -1,8 +1,8 @@
 # Search Insert Position 
 [문제 출처 링크](https://leetcode.com/problems/search-insert-position/)
 
-> Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
+> Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.   
+> 
 > You may assume no duplicates in the array.
 
 정렬된 배열 nums에서 target이 순서상 어디에 들어가야할지 index를 반환하는 문제이다.
