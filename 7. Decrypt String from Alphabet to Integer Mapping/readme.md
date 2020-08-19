@@ -103,9 +103,97 @@ var freqAlphabets = function(s) {
 ```
 모범 답안의 경우, const에 먼저 알파벳 갯수인 26과 각 알파벳의 대응 값을 담아둔 배열을 만들어두어 원소 값을 일일히 계산하는 나보다 시간적 이득을 얻었고, s를 배열 형태로 만들어 원소에 직접 접근했기 때문에 시간을 아꼈다. x의 형태도 `var x = '';`로 선언되었기 때문에 후에 이어진 `x += arr[n-2]`같은 형태의 코드에서 1+2가 아닌 12로 올바르게 접근할 수 있었다. 위의 모범답안의 소요 시간은 48ms로, 1/2의 시간 소요를 나타냈다. 시간이 중요할 때는 불필요한 계산은 최대한 버리는 것이 좋겠다..
 
+
+### Java
+```java
+public class Solution {
+
+    public static String[] box = {
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+    };  // "a"부터 "z"를 담고있는 String 배열
+
+
+    public static String freqAlphabets(String s) {
+        String result = "";         // 결과값
+        int key;                    // box의 알파벳에 접근할 index
+        int len = s.length();       // 처리 중인 문자열의 길이
+
+
+        while(!s.isEmpty()) {
+            // s가 비어있을 때 까지 반복
+
+            if(s.charAt(len-1) == '#') {
+                // #을 발견했을 경우
+
+                key = ((s.charAt(len-3) - '0') * 10) + (s.charAt(len-2) - '0') - 1;
+                // 2자리에 대한 key 값을 계산한다.
+                // charAt(index) - '0'을 통해 char를 int 값으로 변환한다.
+                result = box[key].concat(result);
+                // result에 붙여준다. 이때 뒷부분부터 계산하므로 concat 함수를 통해 결과값이 가장 앞에 오도록 한다.
+
+                len-=3;                     // # 포함 3자리를 사용하였으므로 -3
+                s = s.substring(0, len);    // 계산이 완료된 부분은 제거
+            }
+            else {
+                // #이 없는 1자리일 경우
+                key = s.charAt(len-1) - '0' - 1;        // 1자리에 대한 char의 int화
+                result = box[key].concat(result);       // key를 통해 글자 확인, 붙이기
+
+                len-=1;                     // 1자리를 사용하였으므로 -1
+                s = s.substring(0, len);    // 계산이 완료된 부분은 제거
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String s = "10#11#12";
+
+        System.out.println("result = " + freqAlphabets(s));
+
+        return ;
+    }
+}
+```
+javascript의 모범답안을 참고하여 알파벳을 담고있는 배열을 선언하고, 이후 index값만 계산하여 해당 알파벳에 접근, 사용하였다. 속도가 3ms가 나와서 잘했나 싶었지만, 언어의 특성 때문에 javascript보다 빨리 나온 것이었고, 가장 많은 분포를 가진 구간은 1ms 구간이었다. 
+
+
+
+
+### Java 모범답안
+```java
+class Solution {
+    public String freqAlphabets(String s) {
+       int num=0;
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<s.length();i++)
+        {
+           // System.out.println(i+"      ");
+            if(i<s.length()-2 && s.charAt(i+2)=='#')
+            {
+               // System.out.println("inside      "+s.charAt(i)+"         "+s.charAt(i+1));
+                num=(s.charAt(i)-'0')*10+(s.charAt(i+1)-'0');
+                i=i+2;
+            }
+            else{
+                num=s.charAt(i)-'0';
+            }
+           // System.out.println("num=.  "+num);
+            char c=(char)(num-1+'a');
+           // System.out.println("c=.  "+c);
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+}
+```
+모범 답안의 경우, 0ms 대의 기록이다. 알파벳을 직접 배열에 담을 필요 없이, 'a'의 값에 index만 계산하여 더하면 훨씬 간결한 결과를 얻을 수 있다. 또한 뒤에서부터 계산하여 복잡하게 문자열을 만들어간 나와 달리, 앞에서 부터 계산하여 `charAt(i+2) == '#'`이라는 단순한 방법을 사용하여 앞에서부터 문자열을 확인하였고 `append`를 통해 연결하였다. index를 이용한다는 점은 javascript의 모범답안에서 확인했지만, 애초에 배열에 담을 필요가 없었다는 점에서 반성하게 된다.
+
 ------
 
-풀이일자 : 2020.08.19
+풀이일자 : 2020.08.19-20
 사용 언어 : 
-- Javascript 성공 (시간 : 90 ms, 메모리 : 37.6 MB)
-- Java 미실시
+- Javascript 성공 (2020.08.19, 시간 : 90 ms, 메모리 : 37.6 MB)
+- Java 성공 (2020.08.20, 시간 : 3ms, 메모리 : 41.1 MB)
