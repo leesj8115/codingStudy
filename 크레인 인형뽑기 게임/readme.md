@@ -1,4 +1,4 @@
-# Remove Element 
+# 크레인 인형뽑기 게임 
 [문제 출처 링크](https://programmers.co.kr/learn/courses/30/lessons/64061)
 
 > 게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.
