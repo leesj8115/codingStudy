@@ -5,6 +5,7 @@
 ## Leekcode
  - 20 : Valid Parentheses (Java, Javascript) [#](./LeetCode/LC20.md)
  - 21 : Merge Two Sorted Lists (Java, ~~Cpp~~) [#](./LeetCode/LC21.md)
+ - 26 : Remove Duplicates from Sorted Array (Javascript) [#](./LeetCode/LC26.md)
 ## 백준
  - 1193 : 분수찾기 (Java) [#](./백준/BJ1193.md)
  - 1613 : 역사 (Cpp, Python) [#](./백준/2020-10-15-exam-BJ1613.md)
