@@ -4,6 +4,7 @@
 
 # 정리 목록
 ## Leekcode
+ - 02 : Add Two Numbers (Javascript) [#](./LeetCode/LC02.md)
  - 20 : Valid Parentheses (Java, Javascript) [#](./LeetCode/LC20.md)
  - 21 : Merge Two Sorted Lists (Java, ~~Cpp~~) [#](./LeetCode/LC21.md)
  - 26 : Remove Duplicates from Sorted Array (Javascript) [#](./LeetCode/LC26.md)
