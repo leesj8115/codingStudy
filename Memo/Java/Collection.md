@@ -1,4 +1,4 @@
-# 콜렉션 (Collection)
+# 컬렉션 (Collection)
 
 ## List
 ```
