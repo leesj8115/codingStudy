@@ -33,6 +33,3 @@ Key가 중복되어서는 안됨
  - HashMap
  - Hashtable : `synchronized` 메서드로 구성된 클래스
  - Properties : 이것을 이용하여 파일 입출력 등 데이터 관리를 할 수 있다
-
-
- 과제 : Treeset을 이용한 Lotto 프로그램 만들기..
