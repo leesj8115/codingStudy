@@ -71,8 +71,8 @@ values (SEQ_NO.nextval, '1234', 'test3');
 - 실행 쿼리문  
 ```sql
 update person
-set phone='010-3333-3333', reg = to_timestamp('20210501', 'YYYYMMDD')
-where id='test3';
+set phone = '010-3333-3333', reg = to_timestamp('20210501', 'YYYYMMDD')
+where id = 'test3';
 -- TIMESTAMP 값을 입력하기 위해
 -- to_timestamp('날짜 혹은 시간 값', '날짜 혹은 시간 포맷')
 -- 으로 원하는 시간을 입력 가능하다.
@@ -93,7 +93,7 @@ commit; -- 실행한 쿼리문을 DB에 반영
 - 실행 쿼리문  
 ```sql
 delete from person
-where id='test2';
+where id = 'test2';
 -- id가 test2인 데이터 삭제
 ```
 - 실행 결과(`select * from person;`)  
