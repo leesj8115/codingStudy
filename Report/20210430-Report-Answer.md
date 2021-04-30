@@ -33,6 +33,7 @@ CREATE table person (
 ```sql
 insert into person
 values (SEQ_NO.nextval, 'test1', '1234', '010-1111-1111', sysdate);
+-- 칼럼명을 생략할 시, 테이블의 칼럼 순서에 맞게 입력
 ```
 - 실행 결과(`select * from person;`)  
 ![test1 삽입 결과](./3.png)
