@@ -5,7 +5,7 @@
 ## 1. ER다이어그램을 참조하여 Oracle DB에 테이블을 생성하세요.
 - 실행 쿼리문  
 ```sql
-CREATE table person (
+create table person (
     no NUMBER not null primary key,
     id VARCHAR2(200) not null,
     pw VARCHAR2(200) not null,
@@ -70,8 +70,8 @@ values (SEQ_NO.nextval, '1234', 'test3');
 > - reg : 2021-05-01 날짜 적용
 - 실행 쿼리문  
 ```sql
-UPDATE person
-SET phone='010-3333-3333', reg = to_timestamp('20210501', 'YYYYMMDD')
+update person
+set phone='010-3333-3333', reg = to_timestamp('20210501', 'YYYYMMDD')
 where id='test3';
 -- TIMESTAMP 값을 입력하기 위해
 -- to_timestamp('날짜 혹은 시간 값', '날짜 혹은 시간 포맷')
