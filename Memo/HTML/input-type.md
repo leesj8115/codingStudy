@@ -1,5 +1,7 @@
 # input-type
 전체 : [input-type.html](./input-type.html)을 확인해주세요.  
+![result](./img/page-img.png)
+
 
 ## text
 ```html
