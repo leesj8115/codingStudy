@@ -84,8 +84,6 @@ form 내의 요소들에 대해 설명을 붙여준다. `for`를 통해 다른 �
 > <label for="subject">제목</label>
 > <input type="text" id="subject" />
 > ```
-> 결과 : 
-> <label for="subject">제목</label> <input type="text" id="subject" />
 
 ## select
 사용자가 폼에서 사용할 수 있는 리스트 목록을 보여준다. 여러개의 주어진 값 중에서 선택하도록 할 때 사용할 수 있다.
@@ -98,14 +96,7 @@ form 내의 요소들에 대해 설명을 붙여준다. `for`를 통해 다른 �
 >     <option value="volleyball">배구</option>
 > </select>
 > ```
-> 결과 : 
-> <label for="like-sport">좋아하는 종목</label>
-> <select name="sport" id="like-sport">
->     <option value="soccer">축구</option>
->     <option value="baseball">야구</option>
->     <option value="basketball">농구</option>
->     <option value="volleyball">배구</option>
-> </select>
+
 ## select 속성
 - **multiple** : 다중 선택 가능하도록 한다. (Ctrl or Shift or 드래그를 통해 여러 개 선택)
 - **size** : 값을 몇 개 보여줄지 지정. (default : select = 1, multiple = 4)
@@ -122,17 +113,6 @@ form 내의 요소들에 대해 설명을 붙여준다. `for`를 통해 다른 �
 >     </optgroup>
 > </select>
 > ```
-> 결과 : 
-> <select>
->     <optgroup label="그룹1">
->         <option value="">내용1</option>
->         <option value="">내용2</option>
->     </optgroup>
->         <optgroup label="그룹2">
->         <option value="">내용3</option>
->         <option value="">내용4</option>
->     </optgroup>
-> </select>
 
 ## button
 input에 있었던 type인 submit, button, ~~reset~~(사용자의 실수를 유발할 수 있어 비권장 속성이다.)을 대체할 수 있다. input과의 차이점은, button은 열고 닫는 태그이므로 button 내에 span, img 같은 인라인 요소를 포함할 수 있다.
@@ -140,9 +120,6 @@ input에 있었던 type인 submit, button, ~~reset~~(사용자의 실수를 유�
 > <input type="button" value="input을 사용한 버튼"/>
 > <button type="button">button을 사용한 <strong>강한 버튼</strong></button>
 > ```
-> 결과 : 
-> <input type="button" value="input을 사용한 버튼"/>
-> <button type="button">button을 사용한 <strong>인라인 요소</strong>를 넣은 버튼</button>
 
 # 3. 다른 태그
 
