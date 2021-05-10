@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* 모든 태그에 대해 처리 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* 폰트를 import함으로써 여러 브라우저에서도 동일한 글꼴로 출력되도록 조절할 수 있다.*/
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+	font-size: 0;
+}
+/* 여러개를 나열하여 공통으로 스타일을 적용시킬 수도 있음 */
+/*
+id는 구분자로 #을 사용
+순서 있는 애면 ol, 없는 애면 ul 씀
+*/
+ul, ol, dl {
+    list-style: none;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column-center {
+    display: flex; /* flax 방향 default값은 row */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.view-size {
+    width: 1168px;
+    margin: 0 auto;
+}
+
+
+/* //////////////// header CSS //////////////// */
+
+/*
+클래스는 구분자로 .을 사용
+앞에 > 이 붙으면 자식 태그들을 의미
+태그 다음에 ' '(공백)이 들어가면 모든 요소들을 의미
+
+*/
+
+header {
+    /* rgb 값을 통해서도 설정 가능 */
+    border-bottom: 1px solid #e9e9e9;
+}
+
+header > .wrap {
+	display: flex;
+    justify-content: space-around;
+    height: 69px;
+}
+
+
+
+/* //////////////// top-logo CSS //////////////// */
+/* 태그:선택자를 통해서, 특정 태그만 적용시키는 것이 가능함 */
+#top-logo .wrap {
+    font-size: 0;
+}
+
+#top-logo .wrap a {
+    /* bold = 700 값으로 설정한 것과 동일함 */
+    color: #595959;
+    font-size: 18px;
+}
+
+#top-logo .wrap a:first-child {
+    /* bold = 700 값으로 설정한 것과 동일함 */
+    font-weight: 800;
+}
+
+/* //////////////// lnb CSS //////////////// */
+
+#lnb .wrap ul {
+    display: flex;
+}
+
+#lnb .wrap ul li a {
+    padding: 0 12px;
+    color: #595959;
+}
+
+/* //////////////// user-area CSS //////////////// */
+
+#user-area > .wrap {
+    display: flex;
+}
+
+#user-area .wrap span {
+    color: green;
+    line-height: 32px;
+    margin-right: 10px;
+}
+
+#user-area .wrap form {
+    border: 1px solid #e9e9e9;
+    font-size: 0;
+    margin-right: 10px;
+}
+
+#user-area .wrap form input {
+    border: 1px solid #fff;
+    color: #000;
+    font-size: 14px;
+    height: 28px;
+    text-indent: 10px;
+    width: 154px;
+    vertical-align: middle;
+}
+
+#user-area .wrap form button {
+    color: #999;
+    background: none;
+    border: none;
+    font-size: 14px;
+    width: 28px;
+    height: 28px;
+}
+#user-area .wrap div {
+    margin-left: 10px;
+}
+#user-area .wrap div a {
+    display: inline-block;
+    width: 77px;
+    height: 32px;
+    background-color: #252525;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+}
+
+
+/* //////////////// footer CSS //////////////// */
+#footer > .wrap {
+    text-align: center;
+}
+
+#copy a:hover {
+    color: green;
+    font-weight: 800;
+}
