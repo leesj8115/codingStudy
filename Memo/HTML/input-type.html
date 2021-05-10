@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      /* 설명과 표현을 사각형에 묶어서 표시 */
+      .box {
+        border: 1px solid black;
+      }
+  
+      /* type만 굵게 표시 */
+      tr td:first-child {
+        font-weight: 700;
+      }
+  
+      /* input image의 크기 조절 */
+      #input-image {
+        width: 100px;
+      }
+    </style>
+    <title>input 태그</title>
+  </head>
+  <body>
+    <h1>input 타입 별 형태</h1>
+    
+    <form target="_self" method="GET">
+      <table>
+        <th>타입</th>
+        <th>결과</th>
+        <tr>
+          <td>text</td>
+          <td><input type="text" name="text" value="텍스트"/></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td><input type="password" name="password" value="패스워드"/></td>
+        </tr>
+        <tr>
+          <td>number</td>
+          <td><input type="number" name="number" value="12345"/></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>
+            <input type="email" name="email" value="test@test.com"/>
+            <span>@가 포함되지 않을 경우 오류를 안내한다.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td>
+            <input type="search" name="search" value="검색"/>
+            <span>'X' 표시, 줄바꿈문자 제거 등 text와 일부 차이가 있다.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>tel</td>
+          <td>
+            <input type="tel" name="tel" pattern="(010)-\d{3,4}-\3{4}" value="010-1111-2222"/>
+            <span>검증은 하지 않는다. 그래서 pattern 속성과 함께 사용한다.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td>
+            <input type="url" name="url" value="http://www.naver.com"/>
+            <span>"http://"가 들어가는지 검증해준다.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>file</td>
+          <td><input type="file" name="file" /></td>
+        </tr>
+        <tr>
+          <td>radio</td>
+          <td>
+            <div class="box">
+              <label>남자</label><input type="radio" id="male" name="gender"/>
+              <label>여자</label><input type="radio" id="female" name="gender"/>
+              <label>기타</label><input type="radio" id="other" name="gender"/>
+            </div>
+            name으로 묶여진 값 중에 하나만 선택이 가능하다.
+          </td>
+        </tr>
+        <tr>
+          <td>checkbox</td>
+          <td>
+            <div class="box">
+              <label>개</label><input type="checkbox" name="like" value="dog"/>
+              <label>고양이</label><input type="checkbox" name="like" value="cat"/>
+              <label>새</label><input type="checkbox" name="like" value="bird"/>
+            </div>
+            name을 통해 여러 선택을 함께 받을 수 있다.
+          </td>
+        </tr>
+        <tr>
+          <td>date</td>
+          <td>
+            <input type="date" name="date" value="2021-05-08"/>
+            <span>"년-월-일" 형식으로 데이터 전송</span>
+          </td>
+        </tr>
+        <tr>
+          <td>month</td>
+          <td>
+            <input type="month" name="month" value="2021-05"/>
+            <span>"년-월" 형식으로 데이터 전송</span>
+          </td>
+        </tr>
+        <tr>
+          <td>week</td>
+          <td>
+            <input type="week" name="week" value="2021-W18"/>
+            <span>"년-W주차" 형식으로 데이터 전송</span>
+          </td>
+        </tr>
+        <tr>
+          <td>time</td>
+          <td>
+            <input type="time" name="time" value="22:09"/>
+            <span>"시:분" 형식으로 데이터 전송</span>
+          </td>
+        </tr>
+        <tr>
+          <td>datetime-local</td>
+          <td>
+            <input type="datetime-local" name="datetime" value="2021-05-08T22:15"/>
+            <span>"yyyy-MM-ddThh:mm" 의 포맷으로 데이터 전송 (시간대 없음)</span>
+          </td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>
+            <input type="color" name="color" value="#a0b0c0"/>
+            <span>000000~ffffff까지의 값 입력</span>
+          </td>
+        </tr>
+        <tr>
+          <td>range</td>
+          <td>
+            <div class="box">
+              <input type="range" name="range" min="0" max="10" value="5"/>
+              <span>min=0, max=10, value=5일 때</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>button</td>
+          <td><input type="button" name="button" value="버튼"/></td>
+        </tr>
+        <tr>
+          <td>submit</td>
+          <td>
+            <input type="submit" value="제출"/>
+            <span>'제출'을 눌렀을 때 form의 method에 맞는 방식으로 전송 (기본 : GET)</span>
+          </td>
+        </tr>
+        <tr>
+          <td>image</td>
+          <td>
+            <input id="input-image" type="image" src="./img/sample.png" alt="submit과 동일" />
+            <span>text 형식이 아닌 image 형식의 submit.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>hidden</td>
+          <td>
+            <input type="hidden" value="비밀"/>
+            <div><span>hidden을 통해 전송한 필드는, 사용자에게 노출되지 않는다.</span></div>
+            <div><span>주로 토큰 값이나, 데이터베이스의 레코드를 저장한다.</span></div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
