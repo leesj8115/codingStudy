@@ -9,11 +9,11 @@ html 파일에서 css의 자동완성을 도와준다. 별도 css 파일에서 �
 
 ## 3. [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 들여쓰기로 사용한 tab마다 색상을 입혀줘서 구분시켜준다. 2, 3을 함께 사용하면 화면이 화려한 감은 있지만 코드를 정리하고 쓰는데 도움이 된다.
-![적용 이미지](./beautiful.png)
+![적용 이미지](./img/beautiful.png)
 
 ## 4. [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 html 파일에서 우측 하단의 `Go Live`를 실행시키면, localhost에서 실행하여 화면을 보여준다. 코드 파일을 수정해서 저장하면 브라우저 화면이 바로 갱신되어 실시간으로 편집 결과를 확인하며 코드를 작성할 수 있다. 5번에 비해 편리하여 주로 사용하는 방법이다.
-![Go live](./go_live.png)
+![Go live](./img/go_live.png)
 버튼을 누르면 (local-ip):5500/(파일 경로) 형식으로 띄워준다.
 만약 `Go Live`를 눌렀을 때 실행이 안된다면, 확장 설정 - Use Local Ip 에 체크 표시해준다.
 
