@@ -20,5 +20,5 @@ html 파일에서 우측 하단의 `Go Live`를 실행시키면, localhost에서
 ## 5. [open in brower](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)
 편집중인 html 파일을 `Alt + B` 단축키로 바로 열어준다. 수정했을 때는 새로고침이 필요하다. 4번을 사용하기 전에는 자주 사용했다.
 
-## Prettier, Maerial Theme 등 쓰만한 게 많다
+## Prettier, Maerial Theme 등 쓸만한 게 많다
 검색해보면 사용하기 편한 확장 프로그램들이 많다. 주로 `VS Code (코드 확장자) 확장 프로그램`으로 검색하면 많은 확장 프로그램들이 나온다. 검색하고 써보면서 자신이 편한 환경을 만드는 것도 좋은 준비가 되겠다!
