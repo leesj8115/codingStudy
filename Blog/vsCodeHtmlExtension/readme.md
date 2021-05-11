@@ -17,7 +17,7 @@ html 파일에서 우측 하단의 `Go Live`를 실행시키면, localhost에서
 버튼을 누르면 (local-ip):5500/(파일 경로) 형식으로 띄워준다.
 만약 `Go Live`를 눌렀을 때 실행이 안된다면, 확장 설정 - Use Local Ip 에 체크 표시해준다.
 
-## 5. [open in brower](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser
+## 5. [open in brower](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)
 편집중인 html 파일을 `Alt + B` 단축키로 바로 열어준다. 수정했을 때는 새로고침이 필요하다. 4번을 사용하기 전에는 자주 사용했다.
 
 ## Prettier, Maerial Theme 등 쓰만한 게 많다
