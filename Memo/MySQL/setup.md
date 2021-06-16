@@ -58,7 +58,7 @@
 ## 프로젝트에서 mySQL 설정
 ```s
 #datasource 설정
-spring.datasource.url=jdbc:mysql:@34.64.152.230:3306:the
+spring.datasource.url=jdbc:mysql:@(GCP VM 외부 IP):3306:the
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.username=the
 spring.datasource.password=12345678
