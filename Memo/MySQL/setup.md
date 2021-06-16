@@ -1,4 +1,4 @@
-# GCP를 이용한 CentOS8에서 MySql 설정
+# 구글 클라우드를 이용한 CentOS8에서 MySql 설정
 
 우리는 사용자 계정으로 하고 있기 때문에, superuser의 힘을 빌리기(?) 위해 실행 코드 앞에 `sudo`를 붙인다
 
@@ -21,8 +21,8 @@
 ```
     mysql_secure_installation
 ```
-`mysql_secure_installation`을 검색하면 각 옵션에 대한 설명이 나온다.
-우선은 해당 보안 설정에서 안내하는대로 계속 실행했다
+`mysql_secure_installation`을 검색하면 각 옵션에 대한 설명이 나온다.  
+우선은 해당 보안 설정에서 안내하는대로 계속 실행했다.  
 (순서대로 비밀번호 설정 -> 익명 사용자 삭제 -> root의 원격 접속 제한 -> test DB 삭제 -> privileges 테이블 재시작 여부)
 
 ## 5. mysql root 계정으로 접속
@@ -58,8 +58,7 @@
 ## 프로젝트에서 mySQL 설정
 ```s
 #datasource 설정
-#
-spring.datasource.url=jdbc:mysql:@(GCP VM 외부 IP):3306:the
+spring.datasource.url=jdbc:mysql:@34.64.152.230:3306:the
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.username=the
 spring.datasource.password=12345678
