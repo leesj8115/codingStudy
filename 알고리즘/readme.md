@@ -13,7 +13,7 @@
  - 1309 : Decrypt String from Alphabet to Integer Mapping (Java, Javascript) [#](./LeetCode/LC1309.md)
  - 1351 : Count Negative Numbers in a Sorted Matrix (Javascript) [#](./LeetCode/LC1351.md)
 ## 백준
- - 1991 : 트리 순회 (Java) [#](./백준/BJ1191.md)
+ - 1991 : 트리 순회 (Java) [#](./백준/BJ1991.md)
  - 1193 : 분수찾기 (Java) [#](./백준/BJ1193.md)
  - 1613 : 역사 (Cpp, Python) [#](./백준/2020-10-15-exam-BJ1613.md)
  - 2775 : 부녀회장이 될테야 (JAVA) [#](./백준/BJ2775.md)
