@@ -128,3 +128,69 @@ public MemberController(MemberService memberService) {
 
 ### H2 데이터베이스
 H2 데이터베이스를 설치했다. 윈도우 인스톨러를 실행했고, 설치 경로의 `h2w.bat`를 실행하여 실습을 따라했다. `test.mv.db` 파일이 `C:\Users\사용자명\test.mv.db` 경로에 생성된다. `jdbc:h2:tcp://localhost/~/test` 를 통해 접근해서 사용한다.
+
+### DataSourceUtils
+```java
+  private Connection getConnection() {
+    return DataSourceUtils.getConnection(dataSource);
+  }
+
+  private void close(Connection conn) throws SQLException {
+    DataSourceUtils.releaseConnection(conn, dataSource);
+  }
+```
+`DataSourceUtils`를 통해서 커넥션을 연결해야 한다. 하나의 연결을 유지해서 사용하기 위해, 다음과 같은 메소드 형태로 호출, 반환한다.
+
+### 구현 모듈 변경
+스프링은 컨테이너를 통해, 모듈 변경을 편리하게 할 수 있다.
+```java
+@Configuration
+public class SpringConfig {
+  
+  private DataSource dataSource;
+
+  @Autowired
+  public SpringConfig(DataSource dataSource) {
+    this.dataSource = dataSource;
+  }
+
+  @Bean
+  public MemberService memberService() {
+    return new MemberService(memberRepository());
+  }
+
+  @Bean
+  public MemberRepository memberRepository() {
+    // return new MemoryMemberRepository();
+    return new JdbcMemberRepository(dataSource);
+  }
+}
+```
+`SpringConfig.java`에서의 설정을 통해, 기존의 코드를 변경하지 않고 연결된 모듈을 변경했다. (MemoryMemberRepository -> JdbcMemberRepository)  
+이러한 방법으로, 스프링의 의존성 주입을 통해 SOLID 원칙 중 하나인 **개방-폐쇄 원칙**을 준수할 수 있다.
+
+### 테스트 케이스
+이전에는 `MemoryMemberRepository`에 대한 테스트였고, 실행할 때마다 새로 생성해주었기에 큰 문제가 없었다. 하지만 이번부터는 데이터베이스와 연결해서 테스트하기 때문에 생각치못한 문제가 발생한다. 이를 위해 `@SpringBootTest`와 `@Transactional`을 사용한다.
+- `@SpringBootTest` : 스프링의 컨테이너를 이용하겠다는 의미. 이를 통해 테스트에서 `@Autowired`를 통해 가져온 객체로 테스트를 진행할 수 있다.
+- `@Transactional` : 각 테스트 완료 후 롤백하여, 다른 테스트에 영향이 가지 않도록 한다. (데이터베이스에 반영하고 싶다면 `@Commit`을 사용할 수도 있다.)  
+
+물론, 지금 확인한 통합 테스트 형식이 꼭 좋은 것은 아니다. (스프링 컨테이너 준비시간 등으로 실행 시간이 오래 걸릴수도 있다 등..) 앞서 테스트했던 형식은 단위 테스트인데, 이러한 단위 테스트 형식으로 세세하게 나누어서 확인할 수 있도록 구현하는 게 좋은 테스트 방식이다.
+
+### JdbcTemplate
+순수 JDBC에서 실행한 코드는, 매 실행 마다 반복되는 코드가 많다. `JdbcTemplate` 라이브러리를 이용하면, 반복되는 코드를 간략하게 줄일 수 있다. 이것을 사용하는 것 보다는, `Mybatis`나 `JPA`가 더 낫지 않을까 싶다.
+
+### JPA
+JdbcTemplate로 반복 코드를 줄였으나, 쿼리문은 직접 작성해야했다. 하지만 `JPA`를 이용하면 직접 쿼리를 짜지 않고도 객체 중심의 프로그래밍 작업을 할 수 있다. JPA는 인터페이스로서의 역할을 하고, 실제 구현 기술로 `hibernate`를 사용한다.
+사용을 위해서는 `EntityManager`를 가져오는데, 이 때 스프링이 `application.properties`에 설정한 여러 내용을 취합해서 만든 객체를 가져온다. primary key를 통해 조회하는 경우에는 `em.find`를, 그 외에는 `em.createQuery`를 사용한다.
+
+여기서, **Spring Data JPA** 프레임워크를 더하면 더욱 더 편리한 개발 환경을 얻을 수 있다. 선택이 아니라 필수일 정도로! 물론, JPA가 우선이고 스프링 데이터 JPA가 우선이 아니다. 처음 막무가내로 배웠을 때 두개의 구분을 하지 않고 배웠는데, 이번을 통해 둘이 명확하게 다른 개념임을 알았다.
+
+`JpaRepository<>` 인터페이스를 확장하여 필요한 내용을 작성했다. 이 때, 정말 별다른 코드가 없다. 또한 별도의 클래스를 구현할 필요없이, JpaRepository에서 만들어주는 객체를 가져다 사용하면 된다. 내부에는 CRUD와 관련한 기본적인 메소드들이 정의되어 있다. 공통화가 불가능한 부분에 대해서는 규칙에 맞게 함수명을 정의하면, 원하는 함수를 만들수 있다.
+```java
+// select * from member where name = ?
+@Override
+Optional<Member> findByName(Stirng name);
+```
+실무에서는 복잡한 동적 쿼리는 `Querydsl`이라는 라이브러리를 사용한다. 여러 개의 라이브러리를 복합하여 사용하거나, 제한될 경우 JPA의 네이티브 쿼리를 이용해 처리한다.
+
+## AOP
