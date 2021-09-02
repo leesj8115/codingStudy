@@ -68,3 +68,18 @@ MemberRepository m = new MemoryMemberRepository();
 
 ### IoC 컨테이너, DI 컨테이너
 객체를 생성하고 관리하면서 **의존관계를 연결**해주는 것을 **DI 컨테이너**라고 한다. 예제 코드에서는 `AppConfig`가 이를 담당한다. 의존관계 주입을 이룸으로써 SOLID를 준수하도록 도와준다.
+
+### 스프링 컨테이너 활용
+```java
+// AppConfing appConfing = new AppConfing(); // AppConfig에서 모든 것을 결정
+// MemberService memberService = appConfing.memberService();
+
+ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfing.class);
+MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+```
+기존의 코드에서는 `AppConfig` 객체를 직접 생성하고, 해당 객체에서 필요한 서비스 구현체를 가져왔다. 스프링을 사용하면서(정확히는, DI 컨테이너를 사용하면서), `@Configuration`과 `@Bean` 어노테이션을 통해 등록해주고 필요한 객체를 컨테이너에서 가져오도록 했다. `applicationContext.getBean()` 메소드를 통해 Bean으로 등록한 이름을 통해 조회한다. `AnnotationConfigApplicationContext`는 `ApplicationContext`의 구현체이다. 그리고 `ApplicationContext`는 `BeanFactory`를 상속하고 있다.
+
+- `BeanFactory` : 스프링 컨테이너의 최상위 인터페이스. 빈을 관리하고 조회하는 역할을 담당하며, 기본적인 기능(`getBean()` 등)을 제공한다.
+- `ApplicationContext` : BeanFactory 및 다른 인터페이스를 상속하여 다양한 기능을 제공한다. (메시지 소스를 활용한 국제화 기능, 환경 변수, 애플리케이션 이벤트, 편리한 리소스 조회 등..)
+
+XML이나 스프링 코드를 통해 전달받은 정보를 통해 컨테이너를 구성한다. 이 때 메타 정보인 `BeanDefinition`을 구성한다. 직접 구성하여 사용할 수도 있다.
