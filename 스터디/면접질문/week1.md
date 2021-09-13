@@ -75,7 +75,7 @@ GC를 실행하기 위해 JVM이 모든 애플리케이션 실행을 멈추는 �
 Lock Striping 방법은 synchronized를 통해 메소드 전체에 락을 거는 방법과 달리, 자료구조 내부에 여러 세그먼트를 두어 그 **세그먼트 별로 락을 거는 방식**을 말한다. 같은 객체에 동시에 접근하더라도, 세그먼트가 겹치지 않는다면 경쟁하지 않는다.
 
 이러한 방식을 통해 구현된 자료형은 `Concurrent...`로 시작하는 형태를 갖고 있다.  
-![목록]()
+![목록](https://raw.githubusercontent.com/leesj8115/codingStudy/master/%EC%8A%A4%ED%84%B0%EB%94%94/%EB%A9%B4%EC%A0%91%EC%A7%88%EB%AC%B8/img/Concurrent_list.png)
 
 
 ## VO, DTO, DAO에 대해서 각각 설명해 주세요.
@@ -88,3 +88,4 @@ Lock Striping 방법은 synchronized를 통해 메소드 전체에 락을 거는
 
 ### Value Object (VO)
 값 오브젝트로서 활용한다. 불변으로서 활용하기 때문에, readOnly 특징을 갖는다. DTO와 혼용해서 사용하곤 한다.
+
