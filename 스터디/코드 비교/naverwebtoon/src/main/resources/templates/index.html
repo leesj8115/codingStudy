@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset='utf-8'>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="/js/index.js"></script>
+  <title>Page Title</title>
+</head>
+<body>
+  <h1>작가</h1>
+  <table id = "artist-table">
+    <tr>
+      <th>작가 번호</th>
+      <th>이름</th>
+    </tr>
+  </table>
+  <ul>
+    <li>
+      입력폼
+    </li>
+    <li>
+      <label for="artist-no">번호</label>
+      <input id="artist-no" type="number" />
+    </li>
+    <li>
+      <label for="artist-name">이름</label>
+      <input id="artist-name" type="text" />
+    </li>
+    <li>
+      <button id="artist-get">전체 목록 갱신</button>
+      <button id="artist-post">아티스트 추가</button>
+      <button id="artist-put">아티스트 수정</button>
+      <button id="artist-delete">아티스트 삭제</button>
+    </li>
+  </ul>
+  <a href="/test">왜 시발 안돼</a>
+</body>
+</html>
