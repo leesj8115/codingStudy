@@ -7,7 +7,7 @@
 ### clone [참고](https://plas.tistory.com/20)
 인터페이스 `Cloneable`에 정의된 `clone()`을 오버라이딩하여 활용한다.
 
-## Fail-fast iterator는 무엇이고 어떤 것을 위해 사용되는 건가요? [참고](https://simuing.tistory.com/entry/JAVA-Fail-Safe-Iterator-vs-Fail-Fast-Iterator)
+## Fail-fast iterator는 무엇이고 어떤 것을 위해 사용되는 건가요? [참고](https://simuing.tistory.com/entry/JAVA-Fail-Safe-Iterator-vs-Fail-Fast-Iterator) [참고2](https://118k.tistory.com/656)
 > Fail-fast 방식과 Fast-safe 방식을 비교하여 이해해야합니다. **Fail-fast**는 실패를 조기에 확인하고 작업을 중단하는 방식이며, **Fast-safe**는 안전성을 우선으로 하여, 실패를 피하고자 노력하는 방식입니다. Fail-fast Iterator는 탐색 중에 콜렉션 데이터의 변화를 감지하면, 익셉션을 발생시킵니다. 이를 통해 데이터를 순회하는데 발생하는 문제를 조기에 확인하고 처리할 수 있도록 합니다.
 
 ### Fail-Fast Iterators
