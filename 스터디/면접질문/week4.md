@@ -45,7 +45,8 @@ func.doSomething("do something");
 > @Autowired 과정에서 해당 클래스에 해당되는 정보를 가져와서 활용한다 정도로 이해했습니다. ㅠㅠ 
 
 ### ??
-[참고](https://better-dev.netlify.app/java/2020/08/15/thejava_7/)
+[참고](https://better-dev.netlify.app/java/2020/08/15/thejava_7/)  
+[참고](https://taes-k.github.io/2021/05/23/spring-di-reflection/)
 
 ## Monolithic Architecture, Micro Service Architecture에 대해 각각 설명해 주세요.
 > 모노리틱 아키텍쳐(Monolithic Architecture)는 전통적인 웹 시스템 개발 스타일로, 하나의 애플리케이션 안에 모든 로직이 포함된 형태입니다.
