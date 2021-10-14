@@ -9,6 +9,7 @@
 - 함수형 인터페이스
 - Optional : null 처리를 간편하게 할 수 있도록 지원 (`get()`, `orElseThrow()`)
 - Default Method : 인터페이스 내에 구현된 메소드를 추가해야할 때 `default` 키워드를 붙여 활용한다. (하위 호환성, 람다식을 위해 지원)
+> 스터디원 공유하다보니, `static`도 활용할 수 있다! [참고](https://dahyeee.tistory.com/entry/JAVA-interface-default-static%EB%A9%94%EC%86%8C%EB%93%9C)
 - 날짜 관련 클래스 추가 : `LocalDate`, `ZoneDateTime`, `DateTimeFormatter`, `DayOfWeek`
 - 병렬 배열 정렬 : `parallelSort()` 지원
 - StringJoiner : 문자열 처리 클래스 `StringJoiner` 추가
