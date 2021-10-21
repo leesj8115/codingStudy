@@ -66,7 +66,7 @@ class Scratch {
 - JSON : `:`을 활용해 Key, Value 형태로 나타내는 형식 => `{name : Lee}`
 
 ### 자바 직렬화/역직렬화시 문제 [참고2]
- - InvalidClassException : 직렬화 한 객체를 다시 역직렬화했을 때, `java.io.InvalidClassException`이 발생할 수 있다. 이는 직렬화 시스템과 역직렬화 시스템이 다를 경우에 발생한다. 이를 해결하기 위해서 **SUID(serialVersionUID)**를 활용한다. (값을 지정해주는 것이 좋다.)
+ - InvalidClassException : 직렬화 한 객체를 다시 역직렬화했을 때, `java.io.InvalidClassException`이 발생할 수 있다. 이는 직렬화 시스템과 역직렬화 시스템이 다를 경우에 발생한다. 이를 해결하기 위해서 **SUID(serialVersionUID)** 를 활용한다. (값을 지정해주는 것이 좋다.)
  - 타입 변환시 : int -> long과 같은 변경에도 역직렬화시 익셉션이 발생한다. 원본 클래스의 타입을 엄격하게 지켜야 한다.
  - 멤버 변수가 비었을 경우 익셉션 발생이 아닌 null 값이 들어간다.
  - 데이터의 크기 : 직렬화에 따라 데이터의 크기가 달라질 수 있다. (더 커질수도, 작아질 수도)
