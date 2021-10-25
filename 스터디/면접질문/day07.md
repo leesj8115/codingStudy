@@ -1,7 +1,7 @@
 # 면접 질문 스터디 - 7회차 (2021.10.25)
 
 ## JVM의 메모리 구조에 대해서 설명해 주세요. [참고](https://velog.io/@agugu95/자바와-JVM-그리고-메모리-구조)
-> JVM은 Runtime Data Area, GC, Execution Engine, Class Loader로 구성되어 있습니다. 그 중에서도 메모리 영역인 Runtime Data Area는 메소드 영역, 힙 영역, 스택 영역, PC 레지스터, 네이티브 메소드 스택으로 이루어지면 또 힙은 eden, survivor1, survivor2, old, ~~permanent~~ 로 이루어집니다.
+> JVM은 Runtime Data Area, GC, Execution Engine, Class Loader로 구성되어 있습니다. 그 중에서도 메모리 영역인 Runtime Data Area는 메소드 영역, 힙 영역, 스택 영역, PC 레지스터, 네이티브 메소드 스택으로 이루어지며 또 힙은 eden, survivor1, survivor2, old, ~~permanent~~ 로 이루어집니다.
 
 ### 추가 설명
 ![사진1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile22.uf.tistory.com%2Fimage%2F9973563D5ACE0315215FF6)  
